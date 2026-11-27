@@ -360,7 +360,7 @@ module SequenceServer
       end
 
       def css_asset_path
-        File.join(settings.asset_prefix, 'css', 'app.min.css') + '?v=' + SequenceServer::VERSION
+        File.join(settings.asset_prefix, 'css', 'app.min.css') + '?v=' + SequenceServer::VERSION + '-p1'
       end
 
       def asset_path(file)
