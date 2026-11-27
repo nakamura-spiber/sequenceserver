@@ -7,6 +7,7 @@ import Utils from './utils';
 import { fastqToFasta } from './fastq_to_fasta';
 import CollapsePreferences from './collapse_preferences';
 import './jquery_world';
+import { shortMergedTitle } from './merged_titles';
 
 /**
  * Query component displays query defline, graphical overview, length
@@ -430,7 +431,7 @@ class HitsTable extends Component {
                                 <td className="text-left">{hit.number + '.'}</td>
                                 <td>
                                     <a href={'#Query_' + this.props.query.number + '_hit_' + hit.number}
-                                        className="text-sm text-seqblue hover:text-seqorange cursor-pointer pe-1 line-clamp-1 tooltip-item" title={`${hit.id} ${hit.title}`}>{hit.id} {hit.title}</a>
+                                        className="text-sm text-seqblue hover:text-seqorange cursor-pointer pe-1 line-clamp-1 tooltip-item" title={`${hit.id} ${shortMergedTitle(hit.title)}`}>{hit.id} {shortMergedTitle(hit.title)}</a>
                                 </td>
                                 {hasName &&
                                     <td className="pe-1 line-clamp-1 tooltip-item" title={hit.sciname}>

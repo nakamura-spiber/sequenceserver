@@ -5,6 +5,7 @@ import HSPOverview from './kablammo';
 import downloadFASTA from './download_fasta';
 import AlignmentExporter from './alignment_exporter'; // to download textual alignment
 import HitButtons from 'hit_buttons';
+import MergedTitle from './merged_titles';
 
 /**
  * Component for each hit. Receives props from Report. Has no state.
@@ -120,7 +121,7 @@ export default class extends Component {
                     <i className="fa-regular fa-square-minus print:!hidden"></i>
                     <strong className="cursor-text ml-1 print:ml-0"> {this.props.hit.id}</strong>
                 </div>
-                <span className="ml-1">{this.props.hit.title}</span>
+                <MergedTitle className="ml-1" title={this.props.hit.title} />
             </h4>
             <span className="label first-letter:capitalize text-sm font-normal text-inherit cursor-text">{meta}</span>
         </div>;

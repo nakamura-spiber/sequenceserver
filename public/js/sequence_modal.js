@@ -1,6 +1,7 @@
 import "./sequence";
 import React, { createRef } from "react";
 import _ from "underscore";
+import MergedTitle from "./merged_titles";
 
 /**
  * Takes sequence accession as props, fetches the sequence from the server, and
@@ -126,7 +127,7 @@ class SequenceViewer extends React.Component {
         <div className="section-header border-b border-seqorange pl-px table mb-0 w-full pb-2">
           <h4 className="text-sm table-cell">
             {this.props.sequence.id}
-            <small className="text-inherit">&nbsp; {this.props.sequence.title}</small>
+            <small className="text-inherit">&nbsp; <MergedTitle title={this.props.sequence.title} /></small>
           </h4>
         </div>
         <div className="fastan-content relative pt-0 px-0 pb-px">
